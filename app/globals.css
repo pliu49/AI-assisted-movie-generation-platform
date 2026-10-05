@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #07090d;
+  --color-ink-900: #0b0f14;
+  --color-ink-850: #0f141b;
+  --color-ink-800: #131a22;
+  --color-ink-700: #1b2430;
+  --color-ink-600: #263241;
+  --color-ink-500: #3a4757;
+  --color-ink-400: #5d6b7c;
+  --color-ink-300: #8b98a5;
+  --color-ink-200: #b7c1cb;
+  --color-ink-100: #e6edf3;
+  --color-brand-400: #22d3ee;
+  --color-brand-500: #06b6d4;
+  --color-brand-600: #0891b2;
+  --font-sans: "Segoe UI", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-ink-900);
+  color: var(--color-ink-100);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgb(34 211 238 / 0.3);
+}
+
+/* thin dark scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ink-600) transparent;
+}
+
+.field {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-ink-600);
+  background: var(--color-ink-850);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8125rem;
+  color: var(--color-ink-100);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.field:focus {
+  border-color: var(--color-brand-500);
+}
+textarea.field {
+  resize: vertical;
+  line-height: 1.45;
+}
+select.field {
+  appearance: none;
+  padding-right: 1.6rem;
+  background-image: linear-gradient(45deg, transparent 50%, var(--color-ink-300) 50%),
+    linear-gradient(135deg, var(--color-ink-300) 50%, transparent 50%);
+  background-position:
+    calc(100% - 12px) 55%,
+    calc(100% - 8px) 55%;
+  background-size: 4px 4px;
+  background-repeat: no-repeat;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* React Flow dark theme tweaks */
+.react-flow {
+  --xy-background-color: var(--color-ink-900);
+  --xy-edge-stroke: #3a4757;
+  --xy-minimap-background-color: var(--color-ink-850);
+  --xy-controls-button-background-color: var(--color-ink-800);
+  --xy-controls-button-background-color-hover: var(--color-ink-700);
+  --xy-controls-button-color: var(--color-ink-200);
+  --xy-controls-button-border-color: var(--color-ink-600);
+}
+.react-flow__attribution {
+  background: transparent !important;
+}
+.react-flow__attribution a {
+  color: var(--color-ink-500) !important;
+}
